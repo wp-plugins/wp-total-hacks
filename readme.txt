@@ -12,6 +12,9 @@ WP Total Hacks can customize more than 20 settings on your WordPress Site.
 
 WP Total Hacks can customize more than 20 settings on your WordPress Site.
 
+This Plugin published on GitHub.
+https://github.com/miya0001/wp-total-hacks
+
 = Some features: =
 
 All items you can select to Active or Deactive.
@@ -37,8 +40,11 @@ All items you can select to Active or Deactive.
 * Italian(it_IT) - [Andrea Bersi](http://www.andreabersi.com/)
 
 You can send your own language pack to me.
-Please Contac @miya0001 on twitter.
 
+Please contact to me.
+
+* @miya0001 on twitter.
+* http://www.facebook.com/firegoby
 
 = Contributors =
 
