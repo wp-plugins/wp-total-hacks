@@ -19,6 +19,14 @@ private $translators = array(
         'lang' => 'Italian',
         'url' => 'http://www.andreabersi.com/',
     ),
+    'LiVsI' => array(
+        'lang' => 'Russian',
+        'url' => 'http://lezhnevs.ru/',
+    ),
+    'Serkan Algur' => array(
+        'lang' => 'Turkish',
+        'url' => 'http://www.kaisercrazy.com/',
+    ),
 );
 private $role = 'manage_options';
 private $plugin_url = '';
