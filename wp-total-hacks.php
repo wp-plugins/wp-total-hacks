@@ -5,7 +5,7 @@ Author: Takayuki Miyauchi
 Plugin URI: http://firegoby.theta.ne.jp/wp/wp-total-hacks
 Description: WP Total Hacks can customize your WordPress.
 Author: Takayuki Miyauchi
-Version: 0.2.0
+Version: 0.2.1
 Author URI: http://firegoby.theta.ne.jp/
 */
 
@@ -96,9 +96,6 @@ public function init()
     if ($this->op("wfb_pageexcerpt")) {
         add_post_type_support('page', 'excerpt');
     }
-    if ($this->op("wfb_pageexcerpt")) {
-        add_post_type_support('page', 'excerpt');
-    }
 }
 
 public function wp_print_scripts()
@@ -184,9 +181,11 @@ public function login_headertitle($url)
 
 public function wp_head()
 {
-    if ($this->op("wfb_exclude_loggedin") && is_user_logged_in()) {
-    } else {
-        echo stripslashes($this->op("wfb_google_analytics"));
+    if ($this->op("wfb_google_analytics")) {
+        if ($this->op("wfb_exclude_loggedin") && is_user_logged_in()) {
+        } else {
+            echo stripslashes($this->op("wfb_google_analytics"));
+        }
     }
     if ($this->op('wfb_favicon')) {
         $link = '<link rel="Shortcut Icon" type="image/x-icon" href="%s" />';
