@@ -24,8 +24,8 @@ All items you can select to Active or Deactive.
 * Change admin header logo.
 * Change admin footer text.
 * Change login logo.
-* Remove selected meta boxes for Posts & Pages.
-* Remove selected dashboard widgets.
+* Deactivae selected meta boxes for Posts & Pages.
+* Deactivate selected dashboard widgets.
 * Remove unnecessary meta tags.
 * Change default email address.
 * Remove Update Notification for all users except Admin User.
@@ -72,6 +72,9 @@ Please contact to me.
 4. Other
 
 == Changelog ==
+
+= 0.2.2 =
+* German support
 
 = 0.2.1 =
 * fixed typo
