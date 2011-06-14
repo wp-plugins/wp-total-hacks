@@ -5,7 +5,7 @@ Author: Takayuki Miyauchi
 Plugin URI: http://firegoby.theta.ne.jp/wp/wp-total-hacks
 Description: WP Total Hacks can customize your WordPress.
 Author: Takayuki Miyauchi
-Version: 0.2.2
+Version: 0.2.3
 Author URI: http://firegoby.theta.ne.jp/
 */
 
@@ -211,7 +211,7 @@ private function get_meta($name, $content)
 {
     if ($name && $content) {
         return sprintf(
-            '<meta name="%s" content="%s">',
+            '<meta name="%s" content="%s" />',
             $name,
             $content
         );
