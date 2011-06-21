@@ -167,6 +167,7 @@ function __construct($url)
 {
     $this->plugin_url = $url;
     add_action('admin_menu', array(&$this, 'admin_menu'));
+    add_filter('gettext', array(&$this, 'replace_text_in_thickbox'), 1, 3);
 }
 
 public function admin_styles() {
@@ -225,11 +226,20 @@ public function admin_head()
     do_action('admin_print_styles');
 }
 
+public function replace_text_in_thickbox($translated_text, $source_text, $domain) {
+    if (isset($_GET['post_id']) && !$_GET['post_id'] && 'Insert into Post' == $source_text) {
+        return __('Select File', 'wp-total-hacks');
+    }
+    return $translated_text;
+}
+
 public function admin_notice()
 {
-    echo "<div class=\"error\"><p>";
-    echo "Security failure!";
-    echo "</p></div>";
+    if (isset($_GET['err']) && $_GET['err']) {
+        echo "<div class=\"error\"><p>";
+        echo "Security failure!";
+        echo "</p></div>";
+    }
 }
 
 public function admin_init()
@@ -341,6 +351,7 @@ private function form()
     echo '<input type="hidden" name="wpbiz-nonce" value="'.$nonce.'" />';
     echo '<input type="hidden" id="tabid" name="tabid" value="" />';
     echo '<div id="tabs">';
+    echo '<div id="wfb-notice"><div>'.__('Saved.').'</div></div>';
     echo '<ul id="menu"></ul>';
     include(dirname(__FILE__).'/form/site.php');
     include(dirname(__FILE__).'/form/post.php');
