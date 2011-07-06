@@ -75,6 +75,9 @@ Please contact to me.
 
 == Changelog ==
 
+= 0.4.0 =
+* fixed to WordPress 3.2
+
 = 0.3.0 =
 * Bug fix for admin UI
 
