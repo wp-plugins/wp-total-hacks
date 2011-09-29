@@ -4,9 +4,10 @@ Donate link: http://firegoby.theta.ne.jp/
 Tags: head, post, page, functions.php, admin, logo, auto save, revision, meta box, dashboard
 Requires at least: 3.1
 Tested up to: 3.2
-Stable tag: 0.4.0
+Stable tag: 0.5.1
 
 WP Total Hacks can customize more than 20 settings on your WordPress Site.
+PHP5 is required!
 
 == Description ==
 
@@ -19,6 +20,7 @@ http://www.youtube.com/watch?v=05LFDZJwPAE
 = Some features: =
 
 All items you can select to Active or Deactive.
+PHP5 is required!
 
 * Add a favicon.
 * Change admin header logo.
@@ -43,6 +45,7 @@ All items you can select to Active or Deactive.
 * Turkish(tr_TR) - [Serkan Algur](http://www.kaisercrazy.com/)
 * German(de_DE) - [Felix Kern](http://twitter.com/#!/kernfel)
 * Dutch(nl_NL) - [Guy Steyaert](https://twitter.com/#!/ideosky/)
+* Chinese(zh_CN) - [missingPig](https://github.com/missingPig)
 
 You can send your own language pack to me.
 
@@ -75,8 +78,9 @@ Please contact to me.
 
 == Changelog ==
 
-= 0.4.0 =
-* fixed to WordPress 3.2
+= 0.5.0 =
+* Security fix.
+* apple-touch-icon
 
 = 0.3.0 =
 * Bug fix for admin UI

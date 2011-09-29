@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Total Hacks Turkish\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-23 14:56+0900\n"
-"PO-Revision-Date: 2011-05-25 04:56+0200\n"
+"POT-Creation-Date: 2011-09-21 02:55+0900\n"
+"PO-Revision-Date: 2011-09-21 18:20+0200\n"
 "Last-Translator: Serkan Algur <info@kaisercrazy.com>\n"
 "Language-Team: kaisercrazy <info@kaisercrazy.com>\n"
 "Language: \n"
@@ -18,6 +18,31 @@ msgstr ""
 "X-Poedit-Language: TURKISH\n"
 "X-Poedit-Country: TURKEY\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+
+#: ../includes/admin.php:245
+#: ../includes/form/appearance.php:11
+#: ../includes/form/appearance.php:35
+#: ../includes/form/site.php:9
+#: ../includes/form/site.php:18
+msgid "Select File"
+msgstr "Gözat"
+
+#: ../includes/admin.php:382
+msgid "Saved."
+msgstr "Kaydedildi."
+
+#: ../includes/admin.php:389
+msgid "Save Changes"
+msgstr "Değişiklikleri Kaydet"
+
+#: ../includes/admin.php:434
+msgid "Deactivate"
+msgstr "Etkisizleştir"
+
+#: ../includes/admin.php:436
+#: ../includes/admin.php:438
+msgid "Activate"
+msgstr "Etkinleştir"
 
 #: ../includes/form/appearance.php:3
 msgid "Appearance in admin"
@@ -31,11 +56,6 @@ msgstr "Yönetim Alanı Logosunu Değiştir"
 msgid "Upload 30 x 30 pixel image for admin header logo."
 msgstr "Yönetim alanı logosu için 30 x 30 piksel bir resim yükleyin"
 
-#: ../includes/form/appearance.php:11
-#: ../includes/form/appearance.php:36
-msgid "Select File"
-msgstr "Gözat"
-
 #: ../includes/form/appearance.php:16
 msgid "Change admin footer text"
 msgstr "Yönetim alanı alt kısım yazısını değiştir."
@@ -44,23 +64,23 @@ msgstr "Yönetim alanı alt kısım yazısını değiştir."
 msgid "You can edit admin footer text. Line breaks will remove."
 msgstr "Yönetim alanı alt kısım yazsını düzenleyebilirsiniz. Alt satıra geçme etkisiz."
 
-#: ../includes/form/appearance.php:30
+#: ../includes/form/appearance.php:29
 msgid "Change login logo"
 msgstr "Giriş alanı logosunu değiştir."
 
-#: ../includes/form/appearance.php:32
+#: ../includes/form/appearance.php:31
 msgid "You can customize logo, URL and Title. The logo image size is recommended 310 x 70 pixel."
 msgstr "Logo, link ve başlığı değiştirebilirsiniz. Logo boyutu 310 x 70 piksel idealdir."
 
-#: ../includes/form/appearance.php:35
+#: ../includes/form/appearance.php:34
 msgid "Logo"
 msgstr "Logo"
 
-#: ../includes/form/appearance.php:37
+#: ../includes/form/appearance.php:36
 msgid "URL"
 msgstr "Link"
 
-#: ../includes/form/appearance.php:39
+#: ../includes/form/appearance.php:38
 msgid "Title"
 msgstr "Başlık"
 
@@ -203,84 +223,79 @@ msgid "Please upload .ico image."
 msgstr "Lütfen .ico dosyası yükleyin"
 
 #: ../includes/form/site.php:14
+msgid "Add a apple-touch-icon"
+msgstr "Iphone Dokunmatik Resmi Ekle"
+
+#: ../includes/form/site.php:16
+msgid "Please upload .png image."
+msgstr "Lütfen .png dosyası yükleyin"
+
+#: ../includes/form/site.php:23
 msgid "Remove \"wlwmanifest\" and \"xmlrpc\" from meta."
 msgstr "\"wlwmanifest\" ve \"xmlrpc\" nin otomatik olarak silinmesini aktif et"
 
-#: ../includes/form/site.php:16
+#: ../includes/form/site.php:25
 #, php-format
 msgid "If you don't use \"<a href=\"%s\">Remote Publishing</a>\", remove unnecessary tags from head."
 msgstr " \"<a href=\"%s\">Yönlendirmeli yayın</a>\" kullanmıyorsanız bu gereksiz eklentileri kaldırın"
 
-#: ../includes/form/site.php:22
+#: ../includes/form/site.php:31
 msgid "Remove adjacent posts rel links from head on Pages"
 msgstr "Sayfalardan gelişmiş yazı rel linklerini kaldır"
 
-#: ../includes/form/site.php:24
+#: ../includes/form/site.php:33
 msgid "Remove adjacent posts rel links from head on Pages.<br /><span class=\"ex\">e.g. &lt;link rel=\"next\" ...&gt; &lt;link rel=\"prev\" ...&gt;</span>"
 msgstr "Sayfalardan gelişmiş yazı rel linklerini kaldır<br />örn: <span class=\"ex\">&lt;link rel=\"next\" ...&gt; &lt;link rel=\"prev\" ...&gt;</span>"
 
-#: ../includes/form/site.php:30
+#: ../includes/form/site.php:39
 msgid "Remove version number from head"
 msgstr "Üst kısımdan WordPress versiyonunu kaldır"
 
-#: ../includes/form/site.php:32
+#: ../includes/form/site.php:41
 msgid "Remove generator tag from head. <span class=\"ex\">e.g. &lt;meta name=\"generator\" content=\"WordPress x.x.x\" /&gt;</span>"
 msgstr "Üst kısımdan generator (oluşturucu) alanını kaldır örn: <span class=\"ex\"> &lt;meta name=\"generator\" content=\"WordPress x.x.x\" /&gt;</span>"
 
-#: ../includes/form/site.php:38
+#: ../includes/form/site.php:47
 msgid "Remove #more anchor"
 msgstr "#more ifadesini kaldır "
 
-#: ../includes/form/site.php:40
+#: ../includes/form/site.php:49
 msgid "Remove #more-xxx anchor from more links."
 msgstr "Yazı linklerinin sonundaki  #more-xxx ifadesini kaldır"
 
-#: ../includes/form/site.php:46
+#: ../includes/form/site.php:55
 msgid "Remove \"[...]\" from excerpt"
 msgstr "Devamını oku alanından \"[...]\" ifadesini kaldır"
 
-#: ../includes/form/site.php:48
+#: ../includes/form/site.php:57
 msgid "Remove \"[...]\" from output of the_excerpt()."
 msgstr "the_excerpt() kodundan \"[...]\" ifadesini kaldır"
 
-#: ../includes/form/site.php:54
+#: ../includes/form/site.php:63
 msgid "Install Google Analytics"
 msgstr "Google Analytics Ekle"
 
-#: ../includes/form/site.php:56
+#: ../includes/form/site.php:65
 msgid "Add Google analytics code."
 msgstr "Google Analytics kodunuzu ekleyin"
 
-#: ../includes/form/site.php:63
+#: ../includes/form/site.php:72
 msgid "Exclude user logged in."
 msgstr "Kullanıcı girişini durdurun"
 
-#: ../includes/form/site.php:68
+#: ../includes/form/site.php:77
 msgid "Webmaster Tools Verification"
 msgstr "Webmaster Tools Onayı"
 
-#: ../includes/form/site.php:70
+#: ../includes/form/site.php:79
 msgid "Enter your meta key \"content\" value to verify your blog with <a href=\"https://www.google.com/webmasters/tools/\">Google Webmaster Tools</a>, <a href=\"https://siteexplorer.search.yahoo.com/\">Yahoo! Site Explorer</a>, and <a href=\"http://www.bing.com/webmaster\">Bing Webmaster Center</a>."
 msgstr "<a href=\"https://www.google.com/webmasters/tools/\">Google Webmaster Tools</a>, <a href=\"https://siteexplorer.search.yahoo.com/\">Yahoo! Site Explorer</a> ve <a href=\"http://www.bing.com/webmaster\">Bing Webmaster Center</a> sistemleriden aldığınızı meta \"content\" anahtarını girin "
 
-#: ../includes/wpbiz_admin.php:313
-msgid "Save Changes"
-msgstr "Değişiklikleri Kaydet"
-
-#: ../includes/wpbiz_admin.php:337
-msgid "Deactivate"
-msgstr "Etkisizleştir"
-
-#: ../includes/wpbiz_admin.php:339
-#: ../includes/wpbiz_admin.php:341
-msgid "Activate"
-msgstr "Etkinleştir"
-
-#: ../wp-total-hacks.php:282
+#: ../wp-total-hacks.php:292
 msgid "Settings"
 msgstr "Seçenekler"
 
-#: ../wp-total-hacks.php:285
+#: ../wp-total-hacks.php:295
 msgid "Donate"
 msgstr "Bağış Yap"
 
