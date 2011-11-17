@@ -2,11 +2,11 @@
 /*
 Plugin Name: WP Total Hacks
 Author: Takayuki Miyauchi
-Plugin URI: http://firegoby.theta.ne.jp/wp/wp-total-hacks
+Plugin URI: http://wpist.me/wp/wp-total-hacks/
 Description: WP Total Hacks can customize your WordPress.
 Author: Takayuki Miyauchi
-Version: 0.5.2
-Author URI: http://firegoby.theta.ne.jp/
+Version: 0.6.0
+Author URI: http://wpist.me/
 Domain Path: /languages
 Text Domain: wp-total-hacks
 */
@@ -16,11 +16,48 @@ new TotalHacks();
 
 class TotalHacks {
 
+private $option_params = array(
+    'wfb_google_analytics' => 'text',
+    'wfb_favicon' => 'url',
+    'wfb_admin_favicon' => 'bool',
+    'wfb_apple_icon' => 'url',
+    'wfb_hide_version' => 'bool',
+    'wfb_google' => 'text',
+    'wfb_yahoo' => 'text',
+    'wfb_bing' => 'text',
+    'wfb_hide_custom_fields' => 'bool',
+    'wfb_revision' => 'int',
+    'wfb_autosave' => 'bool',
+    'wfb_selfping' => 'bool',
+    'wfb_widget' => 'array',
+    'wfb_custom_logo' => 'url',
+    'wfb_admin_footer_text' => 'html',
+    'wfb_login_logo' => 'url',
+    'wfb_login_url' => 'url',
+    'wfb_login_title' => 'text',
+    'wfb_webmaster' => 'bool',
+    'wfb_remove_xmlrpc' => 'bool',
+    'wfb_exclude_loggedin' => 'bool',
+    'wfb_adjacent_posts_rel_links' => 'bool',
+    'wfb_remove_more' => 'bool',
+    'wfb_pageexcerpt' => 'bool',
+    'wfb_postmetas' => 'array',
+    'wfb_pagemetas' => 'array',
+    'wfb_emailaddress' => 'email',
+    'wfb_sendername' => 'text',
+    'wfb_contact_methods' => 'array',
+    'wfb_remove_excerpt' => 'bool',
+    'wfb_update_notification' => 'bool',
+);
+
 public function __construct()
 {
     if (is_admin()) {
         require_once(dirname(__FILE__).'/includes/admin.php');
-        new TotalHacksAdmin(WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)));
+        new TotalHacksAdmin(
+            WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)),
+            $this->option_params
+        );
     }
     if (strlen($this->op('wfb_revision'))) {
         if (!defined('WP_POST_REVISIONS')) {
@@ -209,6 +246,10 @@ public function wp_head()
 
 public function admin_head()
 {
+    if ($this->op('wfb_favicon') && $this->op('wfb_admin_favicon')) {
+        $link = '<link rel="Shortcut Icon" type="image/x-icon" href="%s" />'."\n";
+        printf($link, esc_url($this->op("wfb_favicon")));
+    }
     if (!$this->op("wfb_custom_logo")) {
         return;
     }

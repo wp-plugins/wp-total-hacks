@@ -1,10 +1,10 @@
 === WP Total Hacks ===
 Contributors: miyauchi
-Donate link: http://firegoby.theta.ne.jp/
+Donate link: http://wpist.me/
 Tags: head, post, page, functions.php, admin, logo, auto save, revision, meta box, dashboard
-Requires at least: 3.1
-Tested up to: 3.2
-Stable tag: 0.5.2
+Requires at least: 3.2
+Tested up to: 3.3
+Stable tag: 0.6.0
 
 WP Total Hacks can customize more than 20 settings on your WordPress Site.
 PHP5 is required!
@@ -37,9 +37,14 @@ PHP5 is required!
 * Stop sending pings from your own site to your own site when you write posts.
 * And other!
 
+= Support =
+
+* English - http://wpist.me/wp/wp-total-hacks/
+* Japanese - http://firegoby.theta.ne.jp/wp/wp-total-hacks
+
 = Translators =
 
-* Japanese(ja) - [Takayuki Miyauchi](http://firegoby.theta.ne.jp/)
+* Japanese(ja) - [Takayuki Miyauchi](http://wpist.me/)
 * Italian(it_IT) - [Andrea Bersi](http://www.andreabersi.com/)
 * Russian(ru_RU) - [LiVsI](http://lezhnevs.ru/)
 * Turkish(tr_TR) - [Serkan Algur](http://www.kaisercrazy.com/)
@@ -52,14 +57,16 @@ You can send your own language pack to me.
 
 Please contact to me.
 
+* http://wpist.me/ (en)
+* http://firegoby.theta.ne.jp/ (ja)
 * @miya0001 on twitter.
-* http://www.facebook.com/firegoby
 * https://github.com/miya0001/wp-total-hacks
 
 = Contributors =
 
 * [Takayuki Miyauchi](http://firegoby.theta.ne.jp/)
 * [Felix Kern](http://twitter.com/#!/kernfel)
+* [Mako](http://profiles.wordpress.org/users/mako09)
 
 
 == Installation ==
@@ -78,6 +85,12 @@ Please contact to me.
 4. Other
 
 == Changelog ==
+
+= 0.6.0 =
+* http://wpist.me/2011/11/17/wp-total-hacks-0-6-0/
+
+= 0.5.2 =
+* Belarusian support
 
 = 0.5.1 =
 * Chinese support
