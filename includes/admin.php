@@ -2,22 +2,26 @@
 
 require_once(dirname(__FILE__).'/role.class.php');
 
-class WPBIZ_ADMIN {
+class TotalHacksAdmin {
 
 private $contributors = array(
     'Takayuki Miyauchi' => array(
         'country' => 'Japan',
-        'url' => 'http://twitter.com/#!/miya0001',
+        'url' => 'http://wpist.me/',
     ),
     'Felix Kern' => array(
         'country' => 'Germany',
         'url' => 'http://twitter.com/#!/kernfel',
     ),
+    'Mako' => array(
+        'country' => 'Japan',
+        'url' => 'http://profiles.wordpress.org/users/mako09',
+    ),
 );
 private $translators = array(
     'Takayuki Miyauchi' => array(
         'lang' => 'Japanese',
-        'url' => 'http://twitter.com/#!/miya0001',
+        'url' => 'http://wpist.me/',
     ),
     'Andrea Bersi' => array(
         'lang' => 'Italian',
@@ -39,41 +43,23 @@ private $translators = array(
         'lang' => 'Dutch',
         'url' => 'https://twitter.com/#!/ideosky/'
     ),
+    'missingPig' => array(
+        'lang' => 'Chinese',
+        'url' => 'https://github.com/missingPig'
+    ),
+    'Alexander Ovsov' => array(
+        'lang' => 'Belarusian',
+        'url' => 'http://webhostinggeeks.com/science/'
+    ),
+    'Zairul Azmil' => array(
+        'lang' => 'Malay',
+        'url' => 'http://flavors.me/zairul#2fa/wordpress'
+    ),
 );
 private $role = 'manage_options';
 private $plugin_url = '';
 private $page_title = 'WP Total Hacks';
-private $params = array(
-    'wfb_google_analytics' => 'text',
-    'wfb_favicon' => 'text',
-    'wfb_hide_version' => 'bool',
-    'wfb_google' => 'text',
-    'wfb_yahoo' => 'text',
-    'wfb_bing' => 'text',
-    'wfb_hide_custom_fields' => 'bool',
-    'wfb_revision' => 'int',
-    'wfb_autosave' => 'bool',
-    'wfb_selfping' => 'bool',
-    'wfb_widget' => 'array',
-    'wfb_custom_logo' => 'text',
-    'wfb_admin_footer_text' => 'text',
-    'wfb_login_logo' => 'text',
-    'wfb_login_url' => 'text',
-    'wfb_login_title' => 'text',
-    'wfb_webmaster' => 'bool',
-    'wfb_remove_xmlrpc' => 'bool',
-    'wfb_exclude_loggedin' => 'bool',
-    'wfb_adjacent_posts_rel_links' => 'bool',
-    'wfb_remove_more' => 'bool',
-    'wfb_pageexcerpt' => 'bool',
-    'wfb_postmetas' => 'array',
-    'wfb_pagemetas' => 'array',
-    'wfb_emailaddress' => 'email',
-    'wfb_sendername' => 'text',
-    'wfb_contact_methods' => 'array',
-    'wfb_remove_excerpt' => 'bool',
-    'wfb_update_notification' => 'bool',
-);
+private $params = array();
 private $widgets = array(
     'dashboard_right_now' => array(
         'position' => 'normal',
@@ -163,9 +149,10 @@ private $contact_methods = array(
     'jabber' => 'Jabber / Google Talk',
 );
 
-function __construct($url)
+function __construct($url, $params)
 {
     $this->plugin_url = $url;
+    $this->params = $params;
     add_action('admin_menu', array(&$this, 'admin_menu'));
     add_filter('gettext', array(&$this, 'replace_text_in_thickbox'), 1, 3);
 }
@@ -194,19 +181,15 @@ public function admin_styles() {
 }
 
 public function admin_scripts() {
-    global $wp_version;
     wp_enqueue_script('jquery-ui-tabs');
     wp_enqueue_script('editor');
     add_thickbox();
     wp_register_script(
-        'wfb-upload',
-        $this->plugin_url.'/js/wfb-upload.js',
+        'wp-total-hacks-upload',
+        $this->plugin_url.'/js/wp-total-hacks-upload.js',
         array('thickbox')
     );
-    wp_enqueue_script('wfb-upload');
-    if (version_compare($wp_version, '3.2', '<')) {
-        add_action('admin_print_footer_scripts', 'wp_tiny_mce_preload_dialogs', 30);
-    }
+    wp_enqueue_script('wp-total-hacks-upload');
 }
 
 public function admin_menu()
@@ -215,7 +198,7 @@ public function admin_menu()
         $this->page_title,
         'WP Total Hacks',
         $this->role,
-        'wp-biz',
+        'wp-total-hacks',
         array(&$this, 'options')
     );
     add_action("admin_head-".$hook, array(&$this, 'admin_head'));
@@ -227,7 +210,7 @@ public function admin_menu()
 public function admin_head()
 {
     printf(
-        "<script type=\"text/javascript\" src=\"%s/js/wp-biz.js\"></script>",
+        "<script type=\"text/javascript\" src=\"%s/js/wp-total-hacks.js\"></script>",
         $this->plugin_url
     );
     if (isset($_GET['err']) && $_GET['err']) {
@@ -259,14 +242,19 @@ public function admin_init()
 {
     if (isset($_POST['wpbiz-nonce']) && $_POST['wpbiz-nonce']) {
         if (!current_user_can($this->role)) {
-            wp_redirect(admin_url('options-general.php?page=wp-biz&err=true'));
+            wp_redirect(admin_url('options-general.php?page=wp-total-hacks&err=true'));
         }
         $nonce = $_POST['wpbiz-nonce'];
         if (!$act = wp_verify_nonce($nonce, plugin_basename(__FILE__))) {
-            wp_redirect(admin_url('options-general.php?page=wp-biz&err=true'));
+            wp_redirect(admin_url('options-general.php?page=wp-total-hacks&err=true'));
         }
         $this->save();
-        wp_redirect(admin_url('options-general.php?page=wp-biz&update=true'.$_POST['tabid']));
+        if (preg_match("/^total\-hacks\-[a-z]+$/", $_POST['tabid'])) {
+            $tabid = $_POST['tabid'];
+        } else {
+            $tabid = '';
+        }
+        wp_redirect(admin_url('options-general.php?page=wp-total-hacks&update=true#'.$tabid));
     }
 }
 
@@ -291,6 +279,12 @@ public function save()
         } elseif (isset($_POST[$key]) && strlen($_POST[$key])) {
             switch ($type) {
                 case 'text':
+                    update_option($key, trim($_POST[$key]));
+                    break;
+                case 'url':
+                    update_option($key, trim($_POST[$key]));
+                    break;
+                case 'html':
                     update_option($key, trim($_POST[$key]));
                     break;
                 case 'bool':
@@ -357,16 +351,12 @@ public function options()
 
 private function form()
 {
-    global $wp_version;
-    if (version_compare($wp_version, '3.2', '<')) {
-        wp_tiny_mce(true);
-    }
-    $url = admin_url('options-general.php?page=wp-biz');
+    $url = admin_url('options-general.php?page=wp-total-hacks');
     echo '<form method="post" action="'.$url.'">';
     $nonce = wp_create_nonce(plugin_basename(__FILE__));
     echo '<input type="hidden" name="wpbiz-nonce" value="'.$nonce.'" />';
     echo '<input type="hidden" id="tabid" name="tabid" value="" />';
-    echo '<div id="tabs">';
+    echo '<div id="total-hacks-tabs">';
     echo '<div id="wfb-notice"><div>'.__('Saved.').'</div></div>';
     echo '<ul id="menu"></ul>';
     include(dirname(__FILE__).'/form/site.php');
@@ -390,9 +380,30 @@ private function get_plugin_url()
     return $this->plugin_url;
 }
 
-private function op($key)
+private function op($key, $display = true)
 {
-    echo trim(stripslashes(get_option($key)));
+    $value = trim(stripslashes(get_option($key)));
+    switch ($this->params[$key]) {
+        case 'url':
+            $value = esc_html(esc_url($value));
+            break;
+        case 'html':
+            $value = $value;
+            break;
+        case 'int':
+            $value = intval($value);
+            break;
+        case 'bool':
+            $value = intval($value);
+            break;
+        default:
+            $value = esc_html($value);
+    }
+    if ($display) {
+        echo $value;
+    } else {
+        return $value;
+    }
 }
 
 private function sel($id)
