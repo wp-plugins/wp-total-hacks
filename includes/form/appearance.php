@@ -1,11 +1,11 @@
 
-<div id="admin" class="tab">
+<div id="total-hacks-admin" class="total-hacks-tab">
 <h3><?php _e('Appearance in admin', 'wp-total-hacks'); ?></h3>
 
 <div class="block">
     <h4><img alt="" src="<?php echo $this->get_plugin_url(); ?>/img/check.png" height="24" width="24" /><?php _e('Change admin header logo', 'wp-total-hacks'); ?></h4>
     <div class="block_content">
-        <p><?php _e('Upload 30 x 30 pixel image for admin header logo.', 'wp-total-hacks'); ?></p>
+        <p><?php printf(__('Upload %s x %s pixel image for admin header logo.', 'wp-total-hacks'), 16, 16); ?></p>
         <p><img class="caption" alt="" src="<?php echo $this->get_plugin_url(); ?>/img/admin_header_logo.png"></p>
         <input type="text" id="wfb_custom_logo" name="wfb_custom_logo" class="media" value="<?php $this->op('wfb_custom_logo'); ?>" />
         <a class="media-upload" href="JavaScript:void(0);" rel="wfb_custom_logo"><?php _e('Select File', 'wp-total-hacks'); ?></a>
@@ -19,7 +19,7 @@
         <p><img class="caption" alt="" src="<?php echo $this->get_plugin_url(); ?>/img/admin_footer_text.png"></p>
         <div class="poststuff">
         <div class="postdivrich" class="postarea">
-        <?php the_editor(trim(stripslashes(get_option('wfb_admin_footer_text'))), "wfb_admin_footer_text"); ?>
+        <?php the_editor($this->op('wfb_admin_footer_text', false), "wfb_admin_footer_text"); ?>
         </div><!--end #postdivrich-->
         </div><!--end #poststuff-->
     </div>
