@@ -1,12 +1,29 @@
-<div id="site" class="tab">
+<div id="total-hacks-site" class="total-hacks-tab">
 <h3><?php _e('Site Settings', 'wp-total-hacks'); ?></h3>
 
 <div class="block">
     <h4><img src="<?php echo $this->get_plugin_url(); ?>/img/check.png" height="24" width="24" /><?php _e('Add a favicon', 'wp-total-hacks'); ?></h4>
     <div class="block_content">
-        <p><?php _e('Please upload .ico image.', 'wp-total-hacks'); ?></p>
+        <p><?php _e('Please upload .ico image.', 'wp-total-hacks'); ?><br />
         <input type="text" id="wfb_favicon" name="wfb_favicon" class="media" value="<?php $this->op('wfb_favicon'); ?>" />
-        <a class="media-upload" href="JavaScript:void(0);" rel="wfb_favicon"><?php _e('Select File', 'wp-total-hacks'); ?></a>
+        <a class="media-upload" href="JavaScript:void(0);" rel="wfb_favicon"><?php _e('Select File', 'wp-total-hacks'); ?></a></p>
+        <p><?php $this->sel('wfb_admin_favicon'); ?> <?php _e('Use this favicon with administration screens.', 'wp-total-hacks'); ?></p>
+    </div>
+</div>
+
+<div class="block">
+    <h4><img src="<?php echo $this->get_plugin_url(); ?>/img/check.png" height="24" width="24" /><?php _e('Add a apple-touch-icon', 'wp-total-hacks'); ?></h4>
+    <div class="block_content">
+        <p><?php _e('Please upload .png image.', 'wp-total-hacks'); ?></p>
+        <input type="text" id="wfb_apple_icon" name="wfb_apple_icon" class="media" value="<?php $this->op('wfb_apple_icon'); ?>" />
+        <a class="media-upload" href="JavaScript:void(0);" rel="wfb_apple_icon"><?php _e('Select File', 'wp-total-hacks'); ?></a>
+        <p>
+<?php if (get_option('wfb_apple_icon_precomposed')): ?>
+            <input type="checkbox" name="wfb_apple_icon_precomposed" value="1" checked="checked"  />
+<?php else: ?>
+            <input type="checkbox" name="wfb_apple_icon_precomposed" value="1" />
+<?php endif; ?>
+        apple-touch-icon as precomposed.</p>
     </div>
 </div>
 
