@@ -2,9 +2,9 @@
 Contributors: miyauchi
 Donate link: http://wpist.me/
 Tags: head, post, page, functions.php, admin, logo, auto save, revision, meta box, dashboard
-Requires at least: 3.2
-Tested up to: 3.3
-Stable tag: 0.9.1
+Requires at least: 3.5
+Tested up to: 3.5
+Stable tag: 1.1.2
 
 WP Total Hacks can customize more than 20 settings on your WordPress Site.
 PHP5 is required!
@@ -40,7 +40,7 @@ PHP5 is required!
 = Support =
 
 * English - http://wpist.me/wp/wp-total-hacks/
-* Japanese - http://firegoby.theta.ne.jp/wp/wp-total-hacks
+* Japanese - http://firegoby.jp/wp/wp-total-hacks
 
 = Translators =
 
@@ -87,6 +87,15 @@ Please contact to me.
 4. Other
 
 == Changelog ==
+
+= 1.1.0 =
+* fix for wordpress 3.5
+* remove "disable auto_save" function.
+* remove "remove atachement link" function.
+
+= 1.0.1 =
+* Allow you to remove attachment page.
+* Allow you to create child page for "Draft".
 
 = 0.9.1 =
 * Brazilian Portuguese support.
