@@ -59,7 +59,24 @@ private $translators = array(
         'lang' => 'Brazilian Portuguese',
         'url' => 'http://www.rafaelfunchal.com.br/'
     ),
+    'Guillaume VASLIN' => array(
+        'lang' => 'French',
+        'url' => 'http://www.chaptalstreetquartetfamily.fr/csqf00/'
+    ),
+    'George Siamidis' => array(
+        'lang' => 'Greek',
+        'url' => 'https://www.facebook.com/darkosxrc'
+    ),
+    'Branco' => array(
+        'lang' => 'Slovak',
+        'url' => 'http://webhostinggeeks.com/'
+    ),
+    'Amir Maskani' => array(
+        'lang' => 'Persian',
+        'url' => 'http://emir.ir/'
+    ),
 );
+
 private $role = 'manage_options';
 private $plugin_url = '';
 private $page_title = 'WP Total Hacks';
