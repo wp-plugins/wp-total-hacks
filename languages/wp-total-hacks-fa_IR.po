@@ -1,328 +1,325 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# Copyright (C) 2010 WP Total Hacks
+# This file is distributed under the same license as the WP Total Hacks package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Total Hacks Turkish\n"
+"Project-Id-Version: WP Total Hacks 1.0.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-total-hacks\n"
 "POT-Creation-Date: 2013-04-10 08:33:29+00:00\n"
-"PO-Revision-Date: 2011-09-21 18:20+0200\n"
-"Last-Translator: Serkan Algur <info@kaisercrazy.com>\n"
-"Language-Team: kaisercrazy <info@kaisercrazy.com>\n"
+"PO-Revision-Date: 2013-03-29 18:09+0330\n"
+"Last-Translator: Amir Maskani <AmirMaskani@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: TURKISH\n"
-"X-Poedit-Country: TURKEY\n"
-"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: includes/admin.php:248 includes/form/appearance.php:11
 #: includes/form/appearance.php:35 includes/form/site.php:9
 #: includes/form/site.php:19
 msgid "Select File"
-msgstr "Gözat"
+msgstr "انتخاب فایل"
 
 #: includes/admin.php:381
 msgid "Saved."
-msgstr "Kaydedildi."
+msgstr "ذخیره شد."
 
 #: includes/admin.php:388
 msgid "Save Changes"
-msgstr "Değişiklikleri Kaydet"
+msgstr "ذخیره تغییرات"
 
 #: includes/admin.php:433
 msgid "Deactivate"
-msgstr "Etkisizleştir"
+msgstr "غیر فعال سازی"
 
 #: includes/admin.php:435 includes/admin.php:437
 msgid "Activate"
-msgstr "Etkinleştir"
+msgstr "فعال سازی"
 
 #: includes/form/appearance.php:3
 msgid "Appearance in admin"
-msgstr "Yönetim alanındaki görünüm"
+msgstr "تنظیمات نمای مدیریت"
 
 #: includes/form/appearance.php:6
 msgid "Change admin header logo"
-msgstr "Yönetim Alanı Logosunu Değiştir"
+msgstr "تغییر لوگوی سربرگ مدیریت"
 
 #: includes/form/appearance.php:8
 msgid "Upload %s x %s pixel image for admin header logo."
-msgstr "Yönetim alanı logosu için %s x %s piksel bir resim yükleyin"
+msgstr "یک عکس %s * %s پیکسل به عنوان لوگوی سربرگ مدیریت بارگذاری کنید ."
 
 #: includes/form/appearance.php:16
 msgid "Change admin footer text"
-msgstr "Yönetim alanı alt kısım yazısını değiştir."
+msgstr "تغییر متن پانوشت مدیریت"
 
 #: includes/form/appearance.php:18
 msgid "You can edit admin footer text. Line breaks will remove."
 msgstr ""
-"Yönetim alanı alt kısım yazsını düzenleyebilirsiniz. Alt satıra geçme "
-"etkisiz."
+"شما می توانید نوشته پانوشت مدیریت را ویرایش کنید.متن به صورت یک پاراگراف "
+"نمایش داده می شود."
 
 #: includes/form/appearance.php:29
 msgid "Change login logo"
-msgstr "Giriş alanı logosunu değiştir."
+msgstr "تغییر لوگوی صفحه ورود"
 
 #: includes/form/appearance.php:31
 msgid ""
 "You can customize logo, URL and Title. The logo image size is recommended "
 "310 x 70 pixel."
 msgstr ""
-"Logo, link ve başlığı değiştirebilirsiniz. Logo boyutu 310 x 70 piksel "
-"idealdir."
+"شما می توانید لوگو، لینک و عنوان را سفارشی کنید.سایز پیشنهادی برای لوگو "
+"310*70 پیکسل است."
 
 #: includes/form/appearance.php:34
 msgid "Logo"
-msgstr "Logo"
+msgstr "لوگو"
 
 #: includes/form/appearance.php:36
 msgid "URL"
-msgstr "Link"
+msgstr "لینک"
 
 #: includes/form/appearance.php:38
 msgid "Title"
-msgstr "Başlık"
+msgstr "عنوان"
 
 #: includes/form/footer.php:2
 msgid "Translators"
-msgstr "Çevirenler"
+msgstr "مترجمین"
 
 #: includes/form/footer.php:7
 msgid "Contributors"
-msgstr "Katkıda Bulunanlar"
+msgstr "همکاران"
 
 #: includes/form/other.php:2
 msgid "Other"
-msgstr "Diğer"
+msgstr "تنظیمات دیگر"
 
 #: includes/form/other.php:5
 msgid "Deactivate Dashboard Widgets"
-msgstr "Yönetim alanı bileşenlerini etkisizleştir"
+msgstr "غیرفعالسازی ابزارک های پیشخوان"
 
 #: includes/form/other.php:7 includes/form/post.php:8
 #: includes/form/post.php:27
 msgid "Choose the items you want to remove."
-msgstr "Kaldırmak istediklerinizin yanındaki seçim kutucuğuna tıkalyın"
+msgstr "مواردی را که می خواهید حذف شود انتخاب کنید."
 
 #: includes/form/other.php:24
 msgid "Add role \"Webmaster\""
-msgstr "\"Webmaster\" rolü ekle"
+msgstr "افزودن نقش کاربری \"مدیرسایت\""
 
 #: includes/form/other.php:26
 msgid ""
 "This role has the capabilities of an \"Editor\", but can also edit theme "
 "options."
-msgstr "\"Webmaster\" rolü \"Editor\" + \"edit_theme_options\"."
+msgstr ""
+"این نقش قابلیت های یک \"ویرایشگر\" را دارد، اما می تواند تنظیمات پوسته را "
+"ویرایش کند."
 
 #: includes/form/other.php:32
 msgid "Change default email address"
-msgstr "Varsayılan e-posta adresini değiştir"
+msgstr "تغییر آدرس ایمیل پیشفرض"
 
 #: includes/form/other.php:34
 msgid ""
 "Change the email address and sender name used by automatic email "
 "notifications."
-msgstr "Varsayılan e-posta adresi ve gönderen ismini değiştir."
+msgstr ""
+"تغییر آدرس ایمیل نام ارسال کننده استفاده شده توسط اطلاعیه های ایمیلی خودکار"
 
 #: includes/form/other.php:36
 msgid "Name"
-msgstr "İsim"
+msgstr "نام"
 
 #: includes/form/other.php:38
 msgid "Email"
-msgstr "E-Posta"
+msgstr "ایمیل"
 
 #: includes/form/other.php:45
 msgid "Delete default contact methods"
-msgstr "Varsayılan iletişim metodlarını kaldır"
+msgstr "حذف روش های تماس پیشفرض"
 
 #: includes/form/other.php:47
 msgid "Delete default contact methods from user profile."
-msgstr "Kullanıcı profilindeki varsayılan iletişim metodlarını kaldır"
+msgstr "حذف روش های تماس پیشفرض از شناسنامه کاربر"
 
 #: includes/form/other.php:64
 msgid "Remove Update Notification"
-msgstr "Güncelleme bildirimlerini etkisizleştir"
+msgstr "حذف اطلاعیه های بروزرسانی"
 
 #: includes/form/other.php:66
 msgid "Remove Update Notification for all users except Admin User."
-msgstr "Yönetici hariç tüm kullanıcılardan güncelleme bildirimlerini kaldır"
+msgstr "حذف اطلاعیه های بروزرسانی برای تمام کاربران به جز کاربر مدیر"
 
 #: includes/form/post.php:3
 msgid "Posts &amp; Pages"
-msgstr "Yazı ve Sayfalar"
+msgstr "نوشته ها و برگه ها"
 
 #: includes/form/post.php:6
 msgid "Remove meta boxes for Posts"
-msgstr "Yazıların meta kutularını kaldır"
+msgstr "حذف متا باکس های برای نوشته ها"
 
 #: includes/form/post.php:25
 msgid "Remove meta boxes for Pages"
-msgstr "Sayfaların meta kurularını kaldır"
+msgstr "حذف متا باکس ها برای برگه ها"
 
 #: includes/form/post.php:44
 msgid "Revision Control"
-msgstr "Revizyon kontrolü"
+msgstr "مدیریت ذخیره های خودکار"
 
 #: includes/form/post.php:46
 msgid "Limit the number of revisions allowed."
-msgstr "İzin verilen revizyon sayısını belirleyin"
+msgstr "تعداد مجاز ذخیره خودکار مطالب"
 
 #: includes/form/post.php:48
 msgid "Store All"
-msgstr "Hepsini kaydet"
+msgstr "همه را ذخیره کن"
 
 #: includes/form/post.php:64
 msgid "Stop self-pingbacks"
-msgstr "Kendine ping atmasını durdur"
+msgstr "توقف بازتاب به خود"
 
 #: includes/form/post.php:66
 msgid ""
 "Stop sending pingbacks from your own site to your own site when writing "
 "posts."
 msgstr ""
-"Sitenizin kendi kendisine ping atmasını engeller (site içi linkler ile "
-"ilgili)"
+"توقف ارسال بازتاب از سایت خودتان به سایت خودتان زمانی که مطلبی می نویسید."
 
 #: includes/form/post.php:72
 msgid "Add \"Excerpt\" support for Pages."
-msgstr "Sayfalar için \"Devamını oku\" desteğini aktif et"
+msgstr "افزودن پشتیبانی از \"چکیده\"  برای برگه ها."
 
 #: includes/form/post.php:74
 msgid "Allows you to add excerpt text to pages."
-msgstr "Devamını oku ibaresinin sayfalara eklenmesini gerektirir."
+msgstr "به شما اجازه می دهد برای برگه های خود متن چکیده اضافه کنید."
 
 #: includes/form/post.php:80
 msgid "Allow you to create child page for \"draft\"."
-msgstr ""
+msgstr "اجازه ساخت زیر برگه برای برگه های \"پیش نویس\""
 
 #: includes/form/post.php:82
 msgid "You can create child page for non-publish Page."
-msgstr ""
+msgstr "شما می توانید برای برگه های منتشر نشده زیر برگه ایجاد کنید."
 
 #: includes/form/sidebar.php:2
 msgid "WordPress Plugins"
-msgstr "WordPress Eklentileri"
+msgstr "افزونه های وردپرس"
 
 #: includes/form/sidebar.php:13
 msgid "Make WordPress Site Load Faster"
-msgstr ""
+msgstr "بارگذاری سایت وردپرسی را سریع تر کنید."
 
 #: includes/form/sidebar.php:14
 msgid "http://wpbooster.net/"
-msgstr ""
+msgstr "http://wpbooster.net/"
 
 #: includes/form/sidebar.php:18
 msgid "This Plugin needs your support"
-msgstr "Bu eklentinin sizin desteğinize ihtiyacı var."
+msgstr "این افزونه به حمایت شما نیازمند است"
 
 #: includes/form/sidebar.php:19
 msgid "Please help support the continued development."
-msgstr "Geliştirmenin devamının sağlanabilmesi için yardımda bulun"
+msgstr "برای ادامه پشتیبانی و توسعه حمایت کنید."
 
 #: includes/form/sidebar.php:21
 msgid "$200+ makes you an official contributor."
-msgstr "200$ ve yukarısındaki bağışlar sizi katkıda bulunan kişilerden yapar"
+msgstr "$200+ شما را یک مشارکت کننده رسمی می سازد."
 
 #: includes/form/sidebar.php:25
 msgid "Contact"
-msgstr "İletişim"
+msgstr "تماس"
 
 #: includes/form/site.php:2
 msgid "Site Settings"
-msgstr "Site ayarları"
+msgstr "تنظیمات سایت"
 
 #: includes/form/site.php:5
 msgid "Add a favicon"
-msgstr "Favicon Ekle"
+msgstr "افزودن فاو آیکن"
 
 #: includes/form/site.php:7
 msgid "Please upload .ico image."
-msgstr "Lütfen .ico dosyası yükleyin"
+msgstr "لطفاً فایلی با پسوند .ico بارگذاری کنید."
 
 #: includes/form/site.php:10
 msgid "Use this favicon with administration screens."
-msgstr ""
+msgstr "از این فاو آیکن با صغحه های مدیریت استفاده کن."
 
 #: includes/form/site.php:15
 msgid "Add a apple-touch-icon"
-msgstr "Iphone Dokunmatik Resmi Ekle"
+msgstr "افزودن یک اپل تاچ آیکن"
 
 #: includes/form/site.php:17
 msgid "Please upload .png image."
-msgstr "Lütfen .png dosyası yükleyin"
+msgstr "لطفاً فایلی با پسوند .png بارگذاری کنید."
 
 #: includes/form/site.php:31
 msgid "Remove \"wlwmanifest\" and \"xmlrpc\" from meta."
-msgstr "\"wlwmanifest\" ve \"xmlrpc\" nin otomatik olarak silinmesini aktif et"
+msgstr "حذف  \"wlwmanifest\" و  \"xmlrpc\" از متا ."
 
 #: includes/form/site.php:33
 msgid ""
 "If you don't use \"<a href=\"%s\">Remote Publishing</a>\", remove "
 "unnecessary tags from head."
 msgstr ""
-" \"<a href=\"%s\">Yönlendirmeli yayın</a>\" kullanmıyorsanız bu gereksiz "
-"eklentileri kaldırın"
+"اگر شما از \"<a href=\"%s\">انتشار از راه دور</a>\" استفاده نمی کنید، برچسب "
+"های غیرضروری را از سربرگ حذف کنید."
 
 #: includes/form/site.php:39
 msgid "Remove adjacent posts rel links from head on Pages"
-msgstr "Sayfalardan gelişmiş yazı rel linklerini kaldır"
+msgstr "حذف لینک نوشته های مجاور از سربرگ روی برگه"
 
 #: includes/form/site.php:41
 msgid ""
 "Remove adjacent posts rel links from head on Pages.<br /><span class=\"ex"
 "\">e.g. &lt;link rel=\"next\" ...&gt; &lt;link rel=\"prev\" ...&gt;</span>"
 msgstr ""
-"Sayfalardan gelişmiş yazı rel linklerini kaldır<br />örn: <span class=\"ex"
-"\">&lt;link rel=\"next\" ...&gt; &lt;link rel=\"prev\" ...&gt;</span>"
+"حذف لینک نوشته های مجاور از سربرگ روی برگه.به عنوان مثال : <br /><span class="
+"\"ex\"> &lt;link rel=\"next\" ...&gt; &lt;link rel=\"prev\" ...&gt;</span>"
 
 #: includes/form/site.php:47
 msgid "Remove version number from head"
-msgstr "Üst kısımdan WordPress versiyonunu kaldır"
+msgstr "حذف شماره ویرایش از سربرگ"
 
 #: includes/form/site.php:49
 msgid ""
 "Remove generator tag from head. <span class=\"ex\">e.g. &lt;meta name="
 "\"generator\" content=\"WordPress x.x.x\" /&gt;</span>"
 msgstr ""
-"Üst kısımdan generator (oluşturucu) alanını kaldır örn: <span class=\"ex\"> "
-"&lt;meta name=\"generator\" content=\"WordPress x.x.x\" /&gt;</span>"
+"حذف برچسب سازنده از سربرگ.به عنوان مثال : <span class=\"ex\"> &lt;meta name="
+"\"generator\" content=\"WordPress x.x.x\" /&gt;</span>"
 
 #: includes/form/site.php:55
 msgid "Remove #more anchor"
-msgstr "#more ifadesini kaldır "
+msgstr "حذف  #more anchor"
 
 #: includes/form/site.php:57
 msgid "Remove #more-xxx anchor from more links."
-msgstr "Yazı linklerinin sonundaki  #more-xxx ifadesini kaldır"
+msgstr "حذف #more-xxx anchor از لینک های ادامه نوشته"
 
 #: includes/form/site.php:63
 msgid "Remove \"[...]\" from excerpt"
-msgstr "Devamını oku alanından \"[...]\" ifadesini kaldır"
+msgstr "حذف  \"[...]\" از چکیده"
 
 #: includes/form/site.php:65
 msgid "Remove \"[...]\" from output of the_excerpt()."
-msgstr "the_excerpt() kodundan \"[...]\" ifadesini kaldır"
+msgstr "حذف \"[...]\" از خروجی چکیده"
 
 #: includes/form/site.php:71
 msgid "Install Google Analytics"
-msgstr "Google Analytics Ekle"
+msgstr "نصب آنالیزگر گوگل"
 
 #: includes/form/site.php:73
 msgid "Add Google analytics code."
-msgstr "Google Analytics kodunuzu ekleyin"
+msgstr "افزودن کد آنالیزگر گوگل"
 
 #: includes/form/site.php:80
 msgid "Exclude user logged in."
-msgstr "Kullanıcı girişini durdurun"
+msgstr "چشم پوشی از کاربران وارد شده."
 
 #: includes/form/site.php:85
 msgid "Webmaster Tools Verification"
-msgstr "Webmaster Tools Onayı"
+msgstr "اعتبار سنجی ابزارهای مدیریت سایت"
 
 #: includes/form/site.php:87
 msgid ""
@@ -331,42 +328,45 @@ msgid ""
 "href=\"https://siteexplorer.search.yahoo.com/\">Yahoo! Site Explorer</a>, "
 "and <a href=\"http://www.bing.com/webmaster\">Bing Webmaster Center</a>."
 msgstr ""
-"<a href=\"https://www.google.com/webmasters/tools/\">Google Webmaster Tools</"
-"a>, <a href=\"https://siteexplorer.search.yahoo.com/\">Yahoo! Site Explorer</"
-"a> ve <a href=\"http://www.bing.com/webmaster\">Bing Webmaster Center</a> "
-"sistemleriden aldığınızı meta \"content\" anahtarını girin "
+"برای تایید وبلاگ خود در <a href=\"https://www.google.com/webmasters/tools/\" "
+"target=\"_blank\">گوگل وبمستر تولز</a>، <a href=\"https://siteexplorer."
+"search.yahoo.com/\" target=\"_blank\">یاهو! سایت اکسپلورر</a> و <a href="
+"\"http://www.bing.com/webmaster\" target=\"_blank\">بینگ وبمستر سنتر</a> متا "
+"کی خودتان را وارد کنید."
 
 #: wp-total-hacks.php:378
 msgid "Settings"
-msgstr "Seçenekler"
+msgstr "تنظیمات"
 
 #: wp-total-hacks.php:381
 msgid "Donate"
-msgstr "Bağış Yap"
+msgstr "حمایت"
 
 #. Plugin Name of the plugin/theme
 msgid "WP Total Hacks"
-msgstr ""
+msgstr "WP Total Hacks"
 
 #. Plugin URI of the plugin/theme
 msgid "http://wpist.me/wp/wp-total-hacks/"
-msgstr ""
+msgstr "http://wpist.me/wp/wp-total-hacks/"
 
 #. Description of the plugin/theme
 msgid "WP Total Hacks can customize your WordPress."
-msgstr ""
+msgstr "WP Total Hacks می تواند وردپرس شما را سفارشی کند."
 
 #. Author of the plugin/theme
 msgid "Takayuki Miyauchi"
-msgstr ""
+msgstr "تاکایوکی میااوچی"
 
 #. Author URI of the plugin/theme
 msgid "http://wpist.me/"
-msgstr ""
+msgstr "http://wpist.me/"
 
 #~ msgid "Disable Auto Save"
-#~ msgstr "Otomatik kaydı kapat"
+#~ msgstr "غیرفعالسازی ذخیره خودکار"
 
-#, fuzzy
 #~ msgid "Remove attachment link from media uploader."
-#~ msgstr "Sayfalardan gelişmiş yazı rel linklerini kaldır"
+#~ msgstr "حذف پیوند به رسانه از بارگذار رسانه"
+
+#~ msgid "Allows you to remove link for attachment page from media uploader."
+#~ msgstr "به شما اجازه می دهد که پیوند به رسانه را از بارگذار رسانه حذف کنید."
