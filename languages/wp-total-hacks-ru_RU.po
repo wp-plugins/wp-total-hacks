@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-total-hacks\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-total-hacks\n"
-"POT-Creation-Date: 2012-05-08 17:57:44+00:00\n"
+"POT-Creation-Date: 2013-04-10 08:33:29+00:00\n"
 "PO-Revision-Date: 2011-05-24 23:36+0300\n"
 "Last-Translator: LiVsI <livsi1977@list.ru>\n"
 "Language-Team: LiVsI <pered@li.ru>\n"
@@ -18,25 +18,25 @@ msgstr ""
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: includes/admin.php:227 includes/form/appearance.php:11
+#: includes/admin.php:248 includes/form/appearance.php:11
 #: includes/form/appearance.php:35 includes/form/site.php:9
 #: includes/form/site.php:19
 msgid "Select File"
 msgstr "Выберите файл"
 
-#: includes/admin.php:360
+#: includes/admin.php:381
 msgid "Saved."
 msgstr ""
 
-#: includes/admin.php:367
+#: includes/admin.php:388
 msgid "Save Changes"
 msgstr "Сохранить изменения"
 
-#: includes/admin.php:412
+#: includes/admin.php:433
 msgid "Deactivate"
 msgstr "Выключить"
 
-#: includes/admin.php:414 includes/admin.php:416
+#: includes/admin.php:435 includes/admin.php:437
 msgid "Activate"
 msgstr "Включить"
 
@@ -179,14 +179,10 @@ msgid "Store All"
 msgstr "Сохранить все"
 
 #: includes/form/post.php:64
-msgid "Disable Auto Save"
-msgstr "Отключить автосохранение"
-
-#: includes/form/post.php:71
 msgid "Stop self-pingbacks"
 msgstr "Остановить пинг внутри сайта"
 
-#: includes/form/post.php:73
+#: includes/form/post.php:66
 msgid ""
 "Stop sending pingbacks from your own site to your own site when writing "
 "posts."
@@ -194,31 +190,47 @@ msgstr ""
 "Остановить отсылку пингов внутри сайта (при написании записей, ссылающихся "
 "на уже существующие)."
 
-#: includes/form/post.php:79
+#: includes/form/post.php:72
 msgid "Add \"Excerpt\" support for Pages."
 msgstr "Добавить поддержку \"Цитат\" для Страниц."
 
-#: includes/form/post.php:81
+#: includes/form/post.php:74
 msgid "Allows you to add excerpt text to pages."
 msgstr "Установить поддержку цитирования текста для Страниц."
+
+#: includes/form/post.php:80
+msgid "Allow you to create child page for \"draft\"."
+msgstr ""
+
+#: includes/form/post.php:82
+msgid "You can create child page for non-publish Page."
+msgstr ""
 
 #: includes/form/sidebar.php:2
 msgid "WordPress Plugins"
 msgstr "Плагины автора для WordPress"
 
 #: includes/form/sidebar.php:13
+msgid "Make WordPress Site Load Faster"
+msgstr ""
+
+#: includes/form/sidebar.php:14
+msgid "http://wpbooster.net/"
+msgstr ""
+
+#: includes/form/sidebar.php:18
 msgid "This Plugin needs your support"
 msgstr "Это плагин нуждается в Вашей поддержке"
 
-#: includes/form/sidebar.php:14
+#: includes/form/sidebar.php:19
 msgid "Please help support the continued development."
 msgstr "Вы можете оказать поддержку для продолжения разработки."
 
-#: includes/form/sidebar.php:16
+#: includes/form/sidebar.php:21
 msgid "$200+ makes you an official contributor."
 msgstr "Более $200 получено официальным разработчиком."
 
-#: includes/form/sidebar.php:20
+#: includes/form/sidebar.php:25
 msgid "Contact"
 msgstr "Контакты"
 
@@ -331,11 +343,11 @@ msgstr ""
 "siteexplorer.search.yahoo.com/\">Yahoo! Site Explorer</a>, и <a href="
 "\"http://www.bing.com/webmaster\">Bing Webmaster Center</a>."
 
-#: wp-total-hacks.php:338
+#: wp-total-hacks.php:378
 msgid "Settings"
 msgstr "Настройки"
 
-#: wp-total-hacks.php:341
+#: wp-total-hacks.php:381
 msgid "Donate"
 msgstr "Спонсировать"
 
@@ -358,3 +370,10 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://wpist.me/"
 msgstr ""
+
+#~ msgid "Disable Auto Save"
+#~ msgstr "Отключить автосохранение"
+
+#, fuzzy
+#~ msgid "Remove attachment link from media uploader."
+#~ msgstr "Удалить ссылки на \"смежные\" записи из <head> секции html разметки"
