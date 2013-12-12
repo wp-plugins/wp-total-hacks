@@ -1,10 +1,10 @@
 === WP Total Hacks ===
 Contributors: miyauchi
-Donate link: http://wpist.me/
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FR7RD5SGEU69Y
 Tags: head, post, page, functions.php, admin, logo, auto save, revision, meta box, dashboard
-Requires at least: 3.2
-Tested up to: 3.3
-Stable tag: 0.9.1
+Requires at least: 3.5
+Tested up to: 3.7
+Stable tag: 1.5.0
 
 WP Total Hacks can customize more than 20 settings on your WordPress Site.
 PHP5 is required!
@@ -40,7 +40,7 @@ PHP5 is required!
 = Support =
 
 * English - http://wpist.me/wp/wp-total-hacks/
-* Japanese - http://firegoby.theta.ne.jp/wp/wp-total-hacks
+* Japanese - http://firegoby.jp/wp/wp-total-hacks
 
 = Translators =
 
@@ -54,6 +54,11 @@ PHP5 is required!
 * Belarusian(be_BY) - [Alexander Ovsov](http://webhostinggeeks.com/science/)
 * Malay(ms_MY) - [Zairul Azmil](http://flavors.me/zairul#2fa/wordpress)
 * Brazilian Portuguese(pt_BR) - [Rafael Funchal](http://www.rafaelfunchal.com.br/)
+* French(fr_FR) - [Guillaume VASLIN](http://www.chaptalstreetquartetfamily.fr/)
+* Greek(el) - [George Siamidis](https://www.facebook.com/darkosxrc)
+* Slovak(sk_SK) - [Branco](http://webhostinggeeks.com/)
+* Persian(fa_IR) - [Amir Maskani](http://emir.ir/)
+* Serbo-Croation(sr_RS) - [Anja Skrba](http://webhostinggeeks.com/wordpresshosting.php)
 
 You can send your own language pack to me.
 
@@ -69,6 +74,7 @@ Please contact to me.
 * [Takayuki Miyauchi](http://firegoby.theta.ne.jp/)
 * [Felix Kern](http://twitter.com/#!/kernfel)
 * [Mako](http://profiles.wordpress.org/users/mako09)
+* [Shuhei Nishimura](http://private.hibou-web.com/)
 
 
 == Installation ==
@@ -87,6 +93,18 @@ Please contact to me.
 4. Other
 
 == Changelog ==
+
+= 1.2.0 =
+* bug fix (logo in admin bar not display on the site.)
+
+= 1.1.0 =
+* fix for wordpress 3.5
+* remove "disable auto_save" function.
+* remove "remove atachement link" function.
+
+= 1.0.1 =
+* Allow you to remove attachment page.
+* Allow you to create child page for "Draft".
 
 = 0.9.1 =
 * Brazilian Portuguese support.
