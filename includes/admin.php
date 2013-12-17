@@ -17,6 +17,10 @@ private $contributors = array(
         'country' => 'Japan',
         'url' => 'http://profiles.wordpress.org/users/mako09',
     ),
+    'Shuhei Nishimura' => array(
+        'country' => 'Japan',
+        'url' => 'http://private.hibou-web.com/',
+    ),
 );
 private $translators = array(
     'Takayuki Miyauchi' => array(
@@ -59,7 +63,28 @@ private $translators = array(
         'lang' => 'Brazilian Portuguese',
         'url' => 'http://www.rafaelfunchal.com.br/'
     ),
+    'Guillaume VASLIN' => array(
+        'lang' => 'French',
+        'url' => 'http://www.chaptalstreetquartetfamily.fr/csqf00/'
+    ),
+    'George Siamidis' => array(
+        'lang' => 'Greek',
+        'url' => 'https://www.facebook.com/darkosxrc'
+    ),
+    'Branco' => array(
+        'lang' => 'Slovak',
+        'url' => 'http://webhostinggeeks.com/'
+    ),
+    'Amir Maskani' => array(
+        'lang' => 'Persian',
+        'url' => 'http://emir.ir/'
+    ),
+    'Anja Skrba' => array(
+        'lang' => 'Anja Skrba',
+        'url' => 'http://webhostinggeeks.com/wordpresshosting.php'
+    ),
 );
+
 private $role = 'manage_options';
 private $plugin_url = '';
 private $page_title = 'WP Total Hacks';

@@ -4,8 +4,7 @@ Plugin Name: WP Total Hacks
 Author: Takayuki Miyauchi
 Plugin URI: http://wpist.me/wp/wp-total-hacks/
 Description: WP Total Hacks can customize your WordPress.
-Author: Takayuki Miyauchi
-Version: 0.9.1
+Version: 1.6.0
 Author URI: http://wpist.me/
 Domain Path: /languages
 Text Domain: wp-total-hacks
@@ -24,11 +23,10 @@ private $option_params = array(
     'wfb_apple_icon_precomposed' => 'bool',
     'wfb_hide_version' => 'bool',
     'wfb_google' => 'text',
-    'wfb_yahoo' => 'text',
     'wfb_bing' => 'text',
     'wfb_hide_custom_fields' => 'bool',
     'wfb_revision' => 'int',
-    'wfb_autosave' => 'bool',
+    //'wfb_autosave' => 'bool',
     'wfb_selfping' => 'bool',
     'wfb_widget' => 'array',
     'wfb_custom_logo' => 'url',
@@ -49,6 +47,8 @@ private $option_params = array(
     'wfb_contact_methods' => 'array',
     'wfb_remove_excerpt' => 'bool',
     'wfb_update_notification' => 'bool',
+    //'wfb_attachmentlink' => 'bool',
+    'wfb_createpagefordraft' => 'bool',
 );
 
 public function __construct()
@@ -78,12 +78,49 @@ public function __construct()
     add_action('pre_ping',          array(&$this, 'pre_ping'));
     add_action('wp_dashboard_setup',array(&$this, 'wp_dashboard_setup'));
     add_filter('the_content_more_link', array(&$this, 'the_content_more_link'));
-    add_action('wp_print_scripts',  array(&$this, 'wp_print_scripts'));
     add_filter('wp_mail_from',      array(&$this, 'wp_mail_from'));
     add_filter('wp_mail_from_name', array(&$this, 'wp_mail_from_name'));
     add_filter('plugin_row_meta',   array(&$this, 'plugin_row_meta'), 10, 2);
     add_filter('user_contactmethods', array(&$this, 'user_contactmethods'));
     add_filter('excerpt_more',      array(&$this, 'excerpt_more'));
+    add_filter('page_attributes_dropdown_pages_args', array(&$this, 'page_attributes_dropdown_pages_args'));
+    add_action('save_post', array(&$this, 'save_post'));
+}
+
+public function save_post($id)
+{
+    if ($this->op('wfb_createpagefordraft')) {
+        $p = get_post($id);
+        if ($p->post_type === 'page' && $p->post_status !== 'trash' && isset($p->post_parent)) {
+            $parent_id = $p->post_parent;
+            if ($parent_id) {
+                $parent = get_post($parent_id);
+                $status = array('draft', 'pending', 'future');
+                if (isset($parent->post_status) && in_array($parent->post_status, $status)) {
+                    remove_action('save_post', array(&$this, 'save_post'));
+                    $args = array(
+                        'ID' => $id,
+                        'post_status' => $parent->post_status,
+                    );
+                    if ($parent->post_status === 'future') {
+                        $args['post_date'] = $parent->post_date;
+                        $args['post_date_gmt'] = $parent->post_date_gmt;
+                    }
+                    wp_update_post($args);
+                    add_action('save_post', array(&$this, 'save_post'));
+                }
+            }
+        }
+    }
+}
+
+public function page_attributes_dropdown_pages_args($args)
+{
+    if ($this->op('wfb_createpagefordraft')) {
+        $args['post_status'] = 'publish,private,draft,pending,future';
+        return $args;
+    }
+    return $args;
 }
 
 public function plugins_loaded()
@@ -140,13 +177,6 @@ public function init()
 {
     if ($this->op("wfb_pageexcerpt")) {
         add_post_type_support('page', 'excerpt');
-    }
-}
-
-public function wp_print_scripts()
-{
-    if (strlen($this->op('wfb_autosave'))) {
-        wp_deregister_script('autosave');
     }
 }
 
@@ -233,7 +263,7 @@ public function wp_head()
     }
     if ($this->op('wfb_favicon')) {
         $link = '<link rel="Shortcut Icon" type="image/x-icon" href="%s" />'."\n";
-        printf($link, esc_url($this->op("wfb_favicon")));
+        printf($link, $this->remove_scheme(esc_url($this->op("wfb_favicon"))));
     }
     if ($this->op('wfb_apple_icon')) {
         if ($this->op('wfb_apple_icon_precomposed')) {
@@ -241,11 +271,19 @@ public function wp_head()
         } else {
             $link = '<link rel="apple-touch-icon" href="%s" />'."\n";
         }
-        printf($link, esc_url($this->op("wfb_apple_icon")));
+        printf($link, $this->remove_scheme(esc_url($this->op("wfb_apple_icon"))));
     }
     echo $this->get_meta('google-site-verification', $this->op('wfb_google'));
-    echo $this->get_meta('y_key', $this->op('wfb_yahoo'));
     echo $this->get_meta('msvalidate.01', $this->op('wfb_bing'));
+
+    if (is_user_logged_in() && $this->op("wfb_custom_logo")) {
+        $style = '<style type="text/css">';
+        $style .= '#wp-admin-bar-wp-logo > .ab-item .ab-icon{background-position: 0 0;}';
+    $style .= '#wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon:before {position: absolute; left: -1000%%;}';
+    $style .= '#wpadminbar > #wp-toolbar.quicklinks > #wp-admin-bar-root-default.ab-top-menu > #wp-admin-bar-wp-logo.menupop > .ab-item > .ab-icon {background-image: url(%s) !important; width: 16px; height: 16px; background-repeat: no-repeat; top: 9px; left: 2px;}';
+        $style .= '</style>';
+        printf($style, $this->remove_scheme(esc_url($this->op("wfb_custom_logo"))));
+    }
 }
 
 public function admin_head()
@@ -258,10 +296,11 @@ public function admin_head()
         return;
     }
     $style = '<style type="text/css">';
-    $style .= '#header-logo,#wp-admin-bar-wp-logo > .ab-item .ab-icon{background-image: url(%s) !important;}';
     $style .= '#wp-admin-bar-wp-logo > .ab-item .ab-icon{background-position: 0 0;}';
+    $style .= '#wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon:before {position: absolute; left: -1000%%;}';
+    $style .= '#wpadminbar > #wp-toolbar.quicklinks > #wp-admin-bar-root-default.ab-top-menu > #wp-admin-bar-wp-logo.menupop > .ab-item > .ab-icon {background-image: url(%s) !important; width: 16px; height: 16px; background-repeat: no-repeat; top: 9px; left: 2px;}';
     $style .= '</style>';
-    printf($style, esc_url($this->op("wfb_custom_logo")));
+    printf($style, $this->remove_scheme(esc_url($this->op("wfb_custom_logo"))));
 }
 
 private function get_meta($name, $content)
@@ -288,8 +327,8 @@ public function login_head()
 {
     if ($this->op("wfb_login_logo")) {
         printf(
-            '<style type="text/css">h1 a {background-image: url(%s) !important;}</style>',
-            esc_url($this->op('wfb_login_logo'))
+            '<style type="text/css">h1 a {background-image: url(%s) !important;}#login h1 a { width: auto !important; background-size: auto !important; }</style>',
+            $this->remove_scheme(esc_url($this->op('wfb_login_logo')))
         );
     }
 }
@@ -341,6 +380,11 @@ public function plugin_row_meta($links, $file)
         $links[] = sprintf($link, esc_url($url), __("Donate", "wp-total-hacks"));
     }
     return $links;
+}
+
+private function remove_scheme($url)
+{
+    return preg_replace("/^http:/", "", $url);
 }
 
 }
