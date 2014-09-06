@@ -2,9 +2,9 @@
 /*
 Plugin Name: WP Total Hacks
 Author: Takayuki Miyauchi
-Plugin URI: http://wpist.me/wp/wp-total-hacks/
+Plugin URI: https://github.com/miya0001/wp-total-hacks
 Description: WP Total Hacks can customize your WordPress.
-Version: 1.6.0
+Version: 1.9.0
 Author URI: http://wpist.me/
 Domain Path: /languages
 Text Domain: wp-total-hacks
@@ -49,6 +49,9 @@ private $option_params = array(
     'wfb_update_notification' => 'bool',
     //'wfb_attachmentlink' => 'bool',
     'wfb_createpagefordraft' => 'bool',
+    'wfb_disallow_pingback' => 'bool',
+    'wfb_shortcode' => 'bool',
+    'wfb_oembed' => 'bool',
 );
 
 public function __construct()
@@ -130,6 +133,28 @@ public function plugins_loaded()
         false,
         dirname(plugin_basename(__FILE__)).'/languages'
     );
+
+    if ($this->op('wfb_disallow_pingback')) {
+        add_filter('xmlrpc_methods', array($this, 'xmlrpc_methods'));
+    }
+
+    if ($this->op('wfb_shortcode')) {
+        add_filter('widget_text', 'do_shortcode');
+    }
+
+    if ($this->op('wfb_oembed')) {
+        global $wp_embed;
+        add_filter( 'widget_text', array( $wp_embed, 'run_shortcode' ), 8 );
+        add_filter( 'widget_text', array( $wp_embed, 'autoembed'), 8 );
+    }
+}
+
+public function xmlrpc_methods($methods)
+{
+    if ($this->op('wfb_disallow_pingback')) {
+        unset($methods['pingback.ping']);
+    }
+    return $methods;
 }
 
 public function excerpt_more($str)
@@ -280,7 +305,7 @@ public function wp_head()
         $style = '<style type="text/css">';
         $style .= '#wp-admin-bar-wp-logo > .ab-item .ab-icon{background-position: 0 0;}';
     $style .= '#wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon:before {position: absolute; left: -1000%%;}';
-    $style .= '#wpadminbar > #wp-toolbar.quicklinks > #wp-admin-bar-root-default.ab-top-menu > #wp-admin-bar-wp-logo.menupop > .ab-item > .ab-icon {background-image: url(%s) !important; width: 16px; height: 16px; background-repeat: no-repeat; top: 9px; left: 2px;}';
+    $style .= '#wpadminbar > #wp-toolbar.quicklinks > #wp-admin-bar-root-default.ab-top-menu > #wp-admin-bar-wp-logo.menupop > .ab-item > .ab-icon {background-image: url(%s) !important; width: 16px; height: 16px; background-repeat: no-repeat; background-position: center center; background-size: auto; margin-top: 6px; left: 2px;}';
         $style .= '</style>';
         printf($style, $this->remove_scheme(esc_url($this->op("wfb_custom_logo"))));
     }
@@ -298,7 +323,7 @@ public function admin_head()
     $style = '<style type="text/css">';
     $style .= '#wp-admin-bar-wp-logo > .ab-item .ab-icon{background-position: 0 0;}';
     $style .= '#wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon:before {position: absolute; left: -1000%%;}';
-    $style .= '#wpadminbar > #wp-toolbar.quicklinks > #wp-admin-bar-root-default.ab-top-menu > #wp-admin-bar-wp-logo.menupop > .ab-item > .ab-icon {background-image: url(%s) !important; width: 16px; height: 16px; background-repeat: no-repeat; top: 9px; left: 2px;}';
+    $style .= '#wpadminbar > #wp-toolbar.quicklinks > #wp-admin-bar-root-default.ab-top-menu > #wp-admin-bar-wp-logo.menupop > .ab-item > .ab-icon {background-image: url(%s) !important; width: 16px; height: 16px; background-repeat: no-repeat; background-position: center center; background-size: auto; margin-top: 6px; left: 2px;}';
     $style .= '</style>';
     printf($style, $this->remove_scheme(esc_url($this->op("wfb_custom_logo"))));
 }

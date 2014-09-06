@@ -80,8 +80,12 @@ private $translators = array(
         'url' => 'http://emir.ir/'
     ),
     'Anja Skrba' => array(
-        'lang' => 'Anja Skrba',
+        'lang' => 'Serbo-Croation',
         'url' => 'http://webhostinggeeks.com/wordpresshosting.php'
+    ),
+    'Trong' => array(
+        'lang' => 'Vietnamese',
+        'url' => 'http://bizover.net/'
     ),
 );
 
@@ -371,9 +375,6 @@ public function options()
     echo '<div id="wfb-footer">';
     include(dirname(__FILE__).'/form/footer.php');
     echo '</div><!--end #wfb-footer-->';
-    echo '<div id="wfb-sidebar">';
-    include(dirname(__FILE__).'/form/sidebar.php');
-    echo '</div><!--end #wfb-sidebar-->';
     echo '</div><!--end #wfb-container-->';
     echo '</div>';
 }
@@ -469,4 +470,3 @@ private function get_translators()
 
 }
 
-?>
