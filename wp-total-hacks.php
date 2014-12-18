@@ -4,7 +4,7 @@ Plugin Name: WP Total Hacks
 Author: Takayuki Miyauchi
 Plugin URI: https://github.com/miya0001/wp-total-hacks
 Description: WP Total Hacks can customize your WordPress.
-Version: 1.9.0
+Version: 1.9.1
 Author URI: http://wpist.me/
 Domain Path: /languages
 Text Domain: wp-total-hacks
@@ -26,7 +26,6 @@ private $option_params = array(
     'wfb_bing' => 'text',
     'wfb_hide_custom_fields' => 'bool',
     'wfb_revision' => 'int',
-    //'wfb_autosave' => 'bool',
     'wfb_selfping' => 'bool',
     'wfb_widget' => 'array',
     'wfb_custom_logo' => 'url',
@@ -47,7 +46,6 @@ private $option_params = array(
     'wfb_contact_methods' => 'array',
     'wfb_remove_excerpt' => 'bool',
     'wfb_update_notification' => 'bool',
-    //'wfb_attachmentlink' => 'bool',
     'wfb_createpagefordraft' => 'bool',
     'wfb_disallow_pingback' => 'bool',
     'wfb_shortcode' => 'bool',
@@ -83,7 +81,6 @@ public function __construct()
     add_filter('the_content_more_link', array(&$this, 'the_content_more_link'));
     add_filter('wp_mail_from',      array(&$this, 'wp_mail_from'));
     add_filter('wp_mail_from_name', array(&$this, 'wp_mail_from_name'));
-    add_filter('plugin_row_meta',   array(&$this, 'plugin_row_meta'), 10, 2);
     add_filter('user_contactmethods', array(&$this, 'user_contactmethods'));
     add_filter('excerpt_more',      array(&$this, 'excerpt_more'));
     add_filter('page_attributes_dropdown_pages_args', array(&$this, 'page_attributes_dropdown_pages_args'));
@@ -283,7 +280,7 @@ public function wp_head()
     if ($this->op("wfb_google_analytics")) {
         if ($this->op("wfb_exclude_loggedin") && is_user_logged_in()) {
         } else {
-            echo stripslashes($this->op("wfb_google_analytics"));
+            echo apply_filters( "wp_total_hacks_google_analytics", stripslashes( $this->op( "wfb_google_analytics" ) ) );
         }
     }
     if ($this->op('wfb_favicon')) {
@@ -389,22 +386,6 @@ private function op($key, $default = false)
     } else {
         return trim(stripslashes($op));
     }
-}
-
-public function plugin_row_meta($links, $file)
-{
-    $pname = plugin_basename(__FILE__);
-    if ($pname === $file) {
-        $link = '<a href="%s">%s</a>';
-        $links[] = sprintf(
-            $link,
-            admin_url('options-general.php?page=wp-total-hacks'),
-            __("Settings", "wp-total-hacks")
-        );
-        $url = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8NDYFAG2ZM9TU";
-        $links[] = sprintf($link, esc_url($url), __("Donate", "wp-total-hacks"));
-    }
-    return $links;
 }
 
 private function remove_scheme($url)
